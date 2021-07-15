@@ -1,0 +1,33 @@
+
+
+body{
+    background-color: dodgerblue;
+    color: white;
+    margin-top: 20px;
+}
+
+#textInput{
+    background-color: rgb(220, 228, 230);
+    width: 98%;
+}
+
+#countButton{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+@media screen and (min-width: 768px) {
+   body section{
+       width: 1000px;
+       margin: auto;
+   }
+
+    #textInput{
+        width: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+
+}
