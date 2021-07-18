@@ -1,4 +1,26 @@
 const button = document.getElementById("countButton")
+const letters = document.getElementById("lettersDiv");
+const words = document.getElementById("wordsDiv");
+const criarp = document.createElement("p")
+const criarp2 = document.createElement("p")
+
+function criarPLetters(){
+
+  letters.appendChild(criarp)
+  const textLetters = "Letras: "
+  criarp.innerText = textLetters
+}
+criarPLetters()
+
+
+function criarPWords(){
+
+  words.appendChild(criarp2)
+  const textLetters = "Palavras: "
+  criarp2.innerText = textLetters
+}
+criarPWords()
+
 
 button.addEventListener("click", function(){
   let typedText = document.getElementById("textInput").value;
@@ -6,10 +28,8 @@ button.addEventListener("click", function(){
   typedText = typedText.toLowerCase(); 
   
   typedText = typedText.replace(/[^a-z'\s]+/g, ""); 
-  
-
   const letterCounts = {};
-  
+
   for (let i = 0; i < typedText.length; i++) {
     let currentLetter = typedText[i]
     if (letterCounts[currentLetter] === undefined) {
@@ -20,7 +40,6 @@ button.addEventListener("click", function(){
   }
 
   for (let letter in letterCounts) {
-    const letters = document.getElementById("lettersDiv");
     const span = document.createElement("span"); 
     letters.appendChild(span);  
     const textContent = `"${letter}": ${letterCounts[letter]}, `;
@@ -40,9 +59,8 @@ button.addEventListener("click", function(){
       wordCounts[currentword]++; 
     }
   }
-   console.log(wordCounts)
+   
   for (let word in wordCounts) {
-    const words = document.getElementById("wordsDiv");
     const span = document.createElement("span"); 
     words.appendChild(span);  
     const textContent = `"${word}": ${wordCounts[word]}, `;
